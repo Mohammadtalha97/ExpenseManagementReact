@@ -197,7 +197,7 @@ export default class Registeration extends React.Component {
               request
             )
             .then((res) => {
-              console.log("response", res);
+              this.props.history.push("/login");
               this.setState({
                 name: "",
                 email: "",
@@ -205,11 +205,10 @@ export default class Registeration extends React.Component {
                 password2: "",
               });
               swal("Good job!", "Mail Send To Given Mail Id", "success");
-              this.props.history.push("/login");
             })
             .catch((err) => {
               console.log("error", err);
-              // toast(err.response.data.message, { type: "error" });
+              toast(err.response.data.message, { type: "error" });
             });
         } else {
           toast("Password don't matches", { type: "error" });
