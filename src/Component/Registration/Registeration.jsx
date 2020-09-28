@@ -205,6 +205,7 @@ export default class Registeration extends React.Component {
                 password2: "",
               });
               swal("Good job!", "Mail Send To Given Mail Id", "success");
+              this.props.history.push("/login");
             })
             .catch((err) => {
               console.log("error", err);
